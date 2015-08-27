@@ -1,5 +1,9 @@
 package br.com.alura.gerenciador;
 
+/**
+ * @author Danilo Righetto
+ * Classe Empresa do curso Java para Web - Alura
+ */
 public class Empresa {
 
 	private Long id = 0l;
