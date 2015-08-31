@@ -35,6 +35,10 @@ public class Login extends HttpServlet {
 		}else{
 			/*Temos que adicionar  o cookie do cliente para sabermos quem esta logado*/
 			Cookie cookie = new Cookie("usuario.logado", email);
+			/*Para mudarmos o tempo de vida de um cookie devemos definir o tempo maximo de vida do cookie
+			 * e para isso podemos usar o metodo: cookie.setMaxAge e o tempo e em segundos.
+			 * */
+			cookie.setMaxAge(10 * 60);
 			resp.addCookie(cookie);
 			
 			/*Se o usuario existir mostre o email do usuario logado*/
