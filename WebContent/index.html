@@ -3,11 +3,19 @@
 Bem vindo ao nosso gerenciador de empresas!<br/>
 <!-- Vamos Adicionar uma Nova Empresa atraves de um novo formulario -->
 
+<!-- O GET nao deve ser usado para enviar muitas informacoes
+O GET foi feito para trazer informacoes -->
 <form action="novaEmpresa" method="POST">
 	Nome: <input type="text" name="nome">
 	<input type="submit" value="Enviar">
 </form>
-<!-- O GET nao deve ser usado para enviar muitas informacoes
-O GET foi feito para trazer informacoes -->
+<!-- Vamos criar o formulario de Login -->
+<h2>Realize o seu Login: </h2>
+<form action="login" method="POST">
+	Email: <input type="email" name="email" />
+	Senha: <input type="password" name="senha" />
+	<input type="submit" value="Enviar" />
+</form>
+<h3>Use o comando: ""Ctrl + Shift + R" para um refresh sem Cookie e sem Cache.</h3>
 </body>
 </html>

@@ -17,7 +17,6 @@ import br.com.alura.gerenciador.dao.EmpresaDAO;
 *@author Danilo Righetto;
 *@version 1.0
 *Curso da Alura - Servlet 3
-*@param 
 * 
 */
 

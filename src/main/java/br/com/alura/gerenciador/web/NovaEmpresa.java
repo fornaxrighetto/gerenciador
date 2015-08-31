@@ -35,5 +35,6 @@ public class NovaEmpresa extends HttpServlet {
 	}
 	/* O HTTP suporta alem do GET e do POST os metodos:
 	 * delete, head, trace entre outros.
+	 * Mas os Navegadores apenas suportam os metodos: GET, POST e o HEAD 
 	 */
 }
