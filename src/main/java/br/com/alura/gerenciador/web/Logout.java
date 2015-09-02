@@ -23,14 +23,14 @@ public class Logout extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		/*Vamos matar o cookie do usuario
 		 * Dizendo que o tempo do cookie = 0*/
-		Cookie cookie = new Cookies(req.getCookies()).buscaUsuarioLogado();
+		
+		/*Vamos matar a sessao removendo o atributo*/
+		req.getSession().removeAttribute("usuario.logado");
+		
+		/*invalidando a sessao todos os dados armazenados serao perdidos*/
+		req.getSession().invalidate();
+		
 		PrintWriter writer = resp.getWriter();
-		if(cookie == null){
-			writer.println("<html><body>Usuario nao estava logado</body></html>");
-			return;
-		}
-		cookie.setMaxAge(0);
-		resp.addCookie(cookie);
 		writer.println("<html><body>Deslogado com sucesso</body></html>");
 	}
 }

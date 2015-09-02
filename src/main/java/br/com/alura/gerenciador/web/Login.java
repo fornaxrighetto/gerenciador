@@ -2,6 +2,8 @@ package br.com.alura.gerenciador.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.alura.gerenciador.Usuario;
 import br.com.alura.gerenciador.dao.UsuarioDAO;
@@ -33,13 +36,10 @@ public class Login extends HttpServlet {
 		if(usuario == null){
 			writer.println("<html><body>Usuario Invalido!</body></html>");
 		}else{
-			/*Temos que adicionar  o cookie do cliente para sabermos quem esta logado*/
-			Cookie cookie = new Cookie("usuario.logado", email);
-			/*Para mudarmos o tempo de vida de um cookie devemos definir o tempo maximo de vida do cookie
-			 * e para isso podemos usar o metodo: cookie.setMaxAge e o tempo e em segundos.
-			 * */
-			cookie.setMaxAge(10 * 60);
-			resp.addCookie(cookie);
+			/*Vamos trabalhar com SESSION para o nosso Login e Logout*/
+			HttpSession session = req.getSession();
+			session.setAttribute("usuario.logadp", usuario);
+			
 			
 			/*Se o usuario existir mostre o email do usuario logado*/
 			writer.println("<html><body>Usuario Logado: "+ usuario.getEmail() +" </body></html>");

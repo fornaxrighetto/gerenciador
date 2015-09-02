@@ -24,6 +24,31 @@ import br.com.alura.gerenciador.dao.EmpresaDAO;
 @WebServlet(urlPatterns="/busca")
 
 public class BuscaEmpresa extends HttpServlet {
+	
+	public BuscaEmpresa() {
+		/*Vamos descobrir como funciona uma Servlet*/
+		System.out.println("Construindo uma Servlet do Tipo BuscaEmpresa: " + this);
+		/*A Servlet instancia uma vez mas pode usar a mesma varial membro
+		 *Ou seja: CUIDADO !!!*/
+	}
+	
+	@Override
+	public void init() throws ServletException {
+		/*Vamos descobrir como funciona uma Servlet*/
+		System.out.println("Inicializando a Servlet: " + this);
+		/*A Servlet instancia uma vez mas pode usar a mesma varial membro
+		 *Ou seja: CUIDADO !!!*/
+		super.init();
+	}
+	
+	@Override
+	public void destroy() {
+		/*Vamos descobrir como funciona uma Servlet*/
+		System.out.println("Destruindo a Servlet: " + this);
+		/*A Servlet instancia uma vez mas pode usar a mesma varial membro
+		 *Ou seja: CUIDADO !!!*/
+		super.destroy();
+	}
 
 	/**Metodo 'doGet' para que a Servlet faca requisicoes para o Servidor
 	*@param req
